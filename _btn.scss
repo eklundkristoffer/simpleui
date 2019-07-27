@@ -1,0 +1,201 @@
+// .btn-disabled
+$btn-disabled-bg: #a0aec0;
+$btn-disabled-color: #ffffff;
+
+// .btn-danger
+$btn-danger-bg: #f56565;
+$btn-danger-hover-bg: #e53e3e;
+$btn-danger-color: #ffffff;
+
+// .btn-primary
+$btn-primary-bg: #4299e1;
+$btn-primary-hover-bg: #3182ce;
+$btn-primary-color: #ffffff;
+
+// .btn-success
+$btn-success-bg: #48bb78;
+$btn-success-hover-bg: #38a169;
+$btn-success-color: #ffffff;
+
+// .btn-secondary
+$btn-secondary-bg: #cbd5e0;
+$btn-secondary-hover-bg: #a0aec0;
+$btn-secondary-color: #ffffff;
+
+// paddings
+$btn-padding: .9rem 1rem .9rem 1rem;
+$btn-sm-padding: .75rem .9rem .75rem .9rem;
+
+// font sizes
+$btn-font-size: 11px;
+$btn-sm-font-size: 11px;
+
+// button spinner sizes
+$btn-spinner-size: 1.5rem;
+$btn-sm-spinner-size: 1.2rem;
+
+.btn {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    transition: background .1s ease-in-out;
+    font-size: $btn-font-size;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    display: inline-block;
+    padding: $btn-padding;
+    text-decoration: none;
+    border-radius: .25rem;
+    position: relative;
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 1;
+    border: none;
+    width: auto;
+
+    &.disabled {
+        cursor: not-allowed;
+    }
+
+    &, &:hover, &:active, &:focus {
+        outline: 0;
+    }
+
+    &.loading {
+        &::before {
+            border: .2em solid rgba(0,0,0,.15);
+            height: $btn-spinner-size;
+            width: $btn-spinner-size;
+            border-radius: 500rem;
+            position: absolute;
+            margin: auto;
+            content: '';
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+        }
+
+        &::after {
+            border-color: #fff transparent transparent;
+            box-shadow: 0 0 0 1px transparent;
+            height: $btn-spinner-size;
+            width: $btn-spinner-size;
+            border-radius: 500rem;
+            border-style: solid;
+            position: absolute;
+            border-width: .2em;
+            content: '';
+            margin: auto;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+            animation: button-spin .6s linear;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+////////////////////////////////
+//
+// .btn-disabled rules
+//
+////////////////////////////////
+
+.btn.btn-secondary {
+    background-color: $btn-secondary-bg;
+    color: $btn-secondary-color;
+
+    &:hover:not(.disabled) {
+        background-color: $btn-secondary-hover-bg;
+    }
+}
+
+////////////////////////////////
+//
+// .btn-disabled rules
+//
+////////////////////////////////
+
+.btn.btn-success {
+    background-color: $btn-success-bg;
+    color: $btn-success-color;
+
+    &:hover:not(.disabled) {
+        background-color: $btn-success-hover-bg;
+    }
+}
+
+////////////////////////////////
+//
+// .btn-disabled rules
+//
+////////////////////////////////
+
+.btn.btn-disabled {
+    background-color: $btn-disabled-bg;
+    color: $btn-disabled-color;
+
+    &:hover {
+        cursor: not-allowed;
+        user-select: none;
+    }
+}
+
+////////////////////////////////
+//
+// .btn-danger rules
+//
+////////////////////////////////
+
+.btn.btn-danger {
+    background-color: $btn-danger-bg;
+    color: $btn-danger-color;
+
+    &:hover:not(.disabled) {
+        background-color: $btn-danger-hover-bg;
+    }
+}
+
+////////////////////////////////
+//
+// .btn-primary rules
+//
+////////////////////////////////
+
+.btn-primary {
+    background-color: $btn-primary-bg;
+    color: $btn-primary-color;
+
+    &:hover:not(.disabled) {
+        background-color: $btn-primary-hover-bg;
+    }
+}
+
+////////////////////////////////
+//
+// .btn-sm rules
+//
+////////////////////////////////
+
+.btn.btn-sm {
+    font-size: $btn-sm-font-size;
+    padding: $btn-sm-padding;
+}
+
+.btn.btn-sm.loading {
+    &::before, &::after {
+        width: $btn-sm-spinner-size;
+        height: $btn-sm-spinner-size;
+    }
+}
+
+////////////////////////////////
+//
+// global btn rules
+//
+////////////////////////////////
+
+.btn.loading {
+    color: transparent;
+}
+
